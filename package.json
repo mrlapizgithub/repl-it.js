@@ -4,7 +4,7 @@
   "description": "A simple way to use repl.it graphql to make bots.",
   "main": "index.js",
   "scripts": {
-    "test": "echo everything is successful"
+    "test": "node test"
   },
   "repository": {
     "type": "git",
