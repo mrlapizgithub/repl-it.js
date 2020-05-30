@@ -1,0 +1,23 @@
+{
+  "name": "replbot",
+  "version": "1.0.0",
+  "description": "A simple way to use repl.it graphql to make bots.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo everything is successful"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrlapizgithub/repl-it.js.git"
+  },
+  "keywords": [
+    "bot",
+    "repl.it",
+    "graphql"
+  ],
+  "author": "Junhao Zhang",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
