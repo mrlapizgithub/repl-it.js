@@ -1,17 +1,13 @@
 const { login, events, messageLog } = require("./lib/index");
 class Bot {
   /**
-   * Creates the bot.
+   * Creates an instance of the bot
    */
   constructor() {
     // TODO: fabricate all possible events
     this.events = {};
-
-    // TODO: ban users
     this.banned = [];
-
     this.frequency = 60000 * 5; // 5 Minutes
-
     this.posts = [];
   }
 
