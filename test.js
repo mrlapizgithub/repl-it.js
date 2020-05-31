@@ -1,6 +1,8 @@
 const Replit = require("./index");
-
 const fs = require("fs");
-const data = JSON.parse(fs.readFileSync("private", "utf8"));
-
-const client = new Replit(data.username, data.password);
+const client = new Replit();
+(async () => {
+  let data = JSON.parse(fs.readFileSync("private", "utf8"));
+  await client.login(data.username, data.password)
+  
+})()

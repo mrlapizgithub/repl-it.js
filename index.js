@@ -1,13 +1,27 @@
-const { login } = require("./lib/index");
+const { login, events, messageLog } = require("./lib/index");
 class Bot {
   /**
-   * Creates a new bot client.
+   * Creates the bot.
+   */
+  constructor() {
+    // TODO: fabricate all possible events
+    this.events = {};
+
+    // TODO: ban users
+    this.banned = [];
+
+    this.frequency = 60000 * 5; // 5 Minutes
+
+    this.posts = [];
+  }
+
+  /**
+   * Get the bot authorization cookies. This should be the first thing done.
    * @param {String} username Username
    * @param {String} password Password
    */
-  constructor(username, password) {
-    this.cookies = login(username, password);
-    this.events = {};
+  async login(username, password) {
+    global.cookies = await login(username, password);
   }
 
   /**
@@ -42,7 +56,34 @@ class Bot {
    * @param {Object} data Data passed to callback
    */
   call(event, data){
-    this.events[event](data);
+    this.events[event]({
+      message: data,
+      actions: events
+    });
+  }
+
+  /**
+   * Block the user from triggering any events
+   * @param {Number} user The ID of the user
+   */
+  banUser(user){
+    this.banned.push(user);
+  }
+
+  /**
+   * Block multiple users
+   * @param {Array} users An array of IDs
+   */
+  banUsers(users){
+    this.banned.concat(users);
+  }
+
+  /**
+   * Begin listening for messages at a specific file. This should be the last thing done.
+   * @param {String} file File name to store message IDs
+   */
+  listen(file){
+    messageLog(file, this.frequency, this.posts, this);
   }
 }
 module.exports = Bot;
