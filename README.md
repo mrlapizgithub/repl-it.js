@@ -22,6 +22,5 @@ const client = new Replit();
       actions.reply(data.message.id, "Hello world!");
     }
   });
-  console.log(client.cookies)
 })()
 ```
