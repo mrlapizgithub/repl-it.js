@@ -19,7 +19,7 @@ const client = new Replit();
   bot.checkFrequency(60000 * 5); // 5 minutes is good
   bot.on("comment", data => {
     if(data.message.body == "!test") {
-      actions.reply(data.message.id, "Hello world!");
+      data.actions.reply(data.message.id, "Hello world!");
     }
   });
 })()
