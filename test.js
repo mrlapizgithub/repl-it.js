@@ -1,4 +1,4 @@
-const Replit = require("./index");
+const { Bot: Replit } = require("./index");
 const fs = require("fs");
 const bot = new Replit();
 // {"m":[]}
@@ -7,8 +7,8 @@ const bot = new Replit();
   await bot.login(data.username, data.password)
   bot.checkPosts([39768]);
   bot.checkFrequency(1000);
-  bot.on("message", async data => {
-    await data.actions.reply(data.message.id, "Hello world! Your message was "+data.message.body);
+  bot.on("message", data => {
+    console.log(data.message);
   })
   bot.listen("index.json");
 })()

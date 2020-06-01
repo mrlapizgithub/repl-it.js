@@ -3,7 +3,8 @@ Replit.js is an easy library for creating JavaScript [repl.it](https://repl.it/)
 
 ## Get Started
 ```js
-const Replit = require("replbot");
+// Load the comprehensive version.
+const { Bot: Replit } = require("replbot");
 const bot = new Replit();
 (async () => {
   // This should always be the first thing done!
@@ -20,4 +21,4 @@ const bot = new Replit();
 })()
 ```
 
-Docs coming soon!
+[Basic Docs](https://Replbot-NPM-PACKAGE-documentation.coder100.repl.co)
