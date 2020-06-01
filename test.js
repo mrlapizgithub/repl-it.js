@@ -8,10 +8,7 @@ const bot = new Replit();
   bot.checkPosts([39768]);
   bot.checkFrequency(1000);
   bot.on("message", async data => {
-    let output = await data.actions.reply(data.message.id, "Hello world! Your message was "+data.message.body);
-    console.log(data.actions);
-    console.log(data.message.id, "Hello world! Your message was "+data.message.body);
-    console.log(output);
+    await data.actions.reply(data.message.id, "Hello world! Your message was "+data.message.body);
   })
   bot.listen("index.json");
 })()
