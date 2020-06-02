@@ -1,6 +1,6 @@
 {
   "name": "replbot",
-  "version": "1.3.0",
+  "version": "1.4.6",
   "description": "A simple way to use repl.it graphql to make bots.",
   "main": "index.js",
   "scripts": {
