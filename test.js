@@ -1,4 +1,4 @@
-const { Bot: Replit } = require("./index");
+/* const { Bot: Replit } = require("./index");
 const fs = require("fs");
 const bot = new Replit();
 // {"m":[]}
@@ -11,4 +11,12 @@ const bot = new Replit();
     console.log(data.message);
   })
   bot.listen("index.json");
+})() */
+const { SimpleBot: Bot } = require("./index");
+const fs = require("fs");
+const bot = new Bot();
+(async () => {
+  let data = JSON.parse(fs.readFileSync("private", "utf8"));
+  await bot.login(data.username, data.password);
+  await bot.send(39768, "Hello world!")
 })()
