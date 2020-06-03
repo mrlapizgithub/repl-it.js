@@ -53,10 +53,12 @@ class Bot {
    * @param {Object} data Data passed to callback
    */
   async call(event, data){
-    await this.events[event]({
-      message: data,
-      actions: events
-    });
+    if (this.events[event]) {
+      await this.events[event]({
+        message: data,
+        actions: events
+      });
+    }
   }
 
   /**
